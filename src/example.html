@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>穿梭框</title>
+	<link rel="stylesheet" href="http://static.uc108.com/cdn/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/transfer.css">
+    <style type="text/css">
+        [ms-controller] { visibility:hidden; }
+    </style>
+</head>
+<body>
+<div class="container-fluid" ms-controller="subActivity">
+	<div class="col-lg-8 col-lg-offset-2">
+    	<div class="panel panel-default">
+    		<div class="panel-heading clearfix">
+				<div class="col-sm-5">
+					<div class="form-group form-group-sm has-feedback">
+	                    <input type="text" class="form-control" placeholder="Search" ms-duplex="keyword">
+	                    <i class="glyphicon glyphicon-search form-control-feedback text-muted"></i>
+	                </div>
+				</div>
+				<div class="col-sm-5 pull-right">
+					<div class="form-group form-group-sm has-feedback">
+	                	<input type="text" class="form-control" ms-attr-placeholder="'生成的列表（目前已经选择'+ orderedList.length +'项）'" readonly />
+	                </div>
+				</div>
+    		</div>
+			<div class="panel-body m-transfer">
+	            <div class="col-sm-2 center-part">
+	                <button type="button" class="col-sm-8 col-sm-offset-2 btn btn-sm btn-default mb20" ms-click="transfer('#J_MatchedList', 'matchedList', 'orderedList')">
+	                    <i class="glyphicon glyphicon-arrow-right"></i>
+	                </button>
+	                <button type="button" class="col-sm-8 col-sm-offset-2 btn btn-sm btn-default" ms-click="transfer('#J_OrderedList', 'orderedList', 'matchedList')">
+	                    <i class="glyphicon glyphicon-arrow-left"></i>
+	                </button>
+	            </div>
+	            <div class="col-md-5 left-part">
+	                <ul id="J_MatchedList" class="multiple-select mt-10" ms-class="scroll-y: searchedList.length > 8">
+	                    <li class="multiple-select-option checkbox" ms-repeat="searchedList">
+	                        <label>
+	                            <input type="checkbox" ms-attr-value="el[conf.Id]">{{ el[conf.Name] + '(' + el[conf.Id] + ')' }}
+	                        </label>
+	                    </li>
+	                    <li class="multiple-select-option checkbox text-muted" ms-if="searchedList.length == 0">
+	                        <label>no result</label>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="col-md-5 col-sm-offset-2 right-part">
+	                <ul id="J_OrderedList" class="multiple-select mt-10 scroll-y" ms-class="scroll-y: orderedList.length > 8">
+	                    <li class="multiple-select-option checkbox has-feedback-icon" ms-repeat="orderedList">
+	                        <label>
+	                            <input type="checkbox" ms-attr-value="el[conf.Id]">{{ el[conf.Name] + '(' + el[conf.Id] + ')' }}
+	                        </label>
+	                        <i class="glyphicon glyphicon-arrow-up" ms-click="moveUp( $index )"></i>
+	                        <i class="glyphicon glyphicon-arrow-down" ms-click="moveDown( $index )"></i>
+	                    </li>
+	                    <li class="multiple-select-option checkbox text-muted" ms-if="orderedList.length == 0">
+	                        <label>no result</label>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="panel-footer">
+            	<button id="J_Otput" type="button" class="btn btn-sm btn-primary">Output</button>
+            </div>
+        </div>
+	</div>
+	<p id="J_OtputWrap" class="col-lg-8 col-lg-offset-2"></p>
+</div>
+
+<script src="http://static.uc108.com/??cdn/jquery/1.11.1/jquery.js,cdn/bootstrap/3.3.5/js/bootstrap.min.js,cdn/bootstrap-page/2.0.0/page.min.js?v=20161123"></script>
+<script src="http://static.uc108.com/cdn/avalon/1.5.8/avalon.shim.min.js"></script>
+<script src="../dist/example.build.js"></script>
+</body>
+</html>

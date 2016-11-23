@@ -1,0 +1,59 @@
+.m-transfer {
+  position: relative; }
+
+.center-part {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .center-part .btn + .btn {
+    margin-top: 20px; }
+
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline {
+  padding-top: 0; }
+
+.multiple-select {
+  overflow: hidden;
+  margin-bottom: 0;
+  padding-left: 0;
+  height: 240px;
+  line-height: 30px;
+  background: #FFF;
+  border-radius: 4px;
+  border: 1px solid #DDD; }
+  .multiple-select.scroll-y {
+    overflow-y: scroll; }
+  .multiple-select li {
+    padding: 0;
+    margin: 0; }
+    .multiple-select li.checkbox + .checkbox {
+      margin-top: 0; }
+    .multiple-select li:hover {
+      background-color: #F5F5F5; }
+    .multiple-select li.has-feedback-icon {
+      padding-right: 60px; }
+  .multiple-select .glyphicon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #777; }
+    .multiple-select .glyphicon:hover {
+      color: #FFF;
+      background-color: #428BCA; }
+  .multiple-select .glyphicon-arrow-up {
+    right: 30px; }
+  .multiple-select label {
+    padding-left: 40px;
+    margin: 0;
+    width: 100%; }
+  .multiple-select input[type="checkbox"] {
+    margin-top: 10px;
+    margin-left: -30px; }
