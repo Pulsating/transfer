@@ -2,6 +2,8 @@
 
 Talk is cheap, show you the [example](http://htmlpreview.github.io/?https://github.com/Pulsating/transfer/blob/master/src/example.html).
 
+I'm going to use Vue in the project instead of Avalon.
+
 ### What's required
 
 - jQuery
@@ -10,15 +12,19 @@ Talk is cheap, show you the [example](http://htmlpreview.github.io/?https://gith
 
 ### What's included
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+Within the download you'll find the following directories and files. You'll see something like this:
 
 ```
 bs-popover-confirm/
 ├── dist/
 │   └── example.build.js
 └── src/
+    ├── css/
+    |   └── transfer.css
     ├── js/
-    |   ├── bs-popover-confirm.js
+    |   ├── transfer.js
     |   └── example.js
+    ├── scss/
+    |   └── transfer.scss
     └── example.html
 ```
